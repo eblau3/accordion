@@ -1,50 +1,276 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: unset;
-      padding: unset;
-    }
-    button {
-      all: unset;
-    }
-    body {
-      max-width: 700px;
-      width: 100%;
-      margin-right: auto;
-      margin-left: auto;
-    }
-  </style>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="accordion js-accordion">
-    <h3 class="accordion__header">
-      <button class="accordion__button js-accordion-toggle">Accordion Item</button>
-    </h3>
-    <div class="accordion__body js-accordion-content">
-      <div class="accordion__body__inner">
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati perspiciatis debitis placeat blanditiis quibusdam dignissimos odit sit assumenda. Ex obcaecati vitae doloremque fugiat ab nemo rerum impedit, quisquam inventore nisi?</p>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion Demo</title>
+    <link rel="stylesheet" href="https://unpkg.com/destyle.css@4.0.1/destyle.min.css" />
+    <link rel="stylesheet" href="./accordion.css" />
+    <script src="./accordion.js" defer></script>
+  </head>
+  <body>
+    <div style="max-width: 1000px; width: 100%; margin-right: auto; margin-left: auto">
+      <h1 style="font-size: 32px; font-weight: bold">Accordion Demo</h1>
+      <br />
+      <br />
+      <br />
+      <h2 style="font-size: 24px; font-weight: bold">デフォルト</h2>
+      <p>必要最低限の機能を備えた基本のアコーディオンです。</p>
+      <p>
+        グループ要素に任意のidを付与することで、それを基準にbuttonとcontentのidの命名に含めることができます。
+        <br />
+        （特に設定しない場合でもユニークのidは自動で付与されます）
+      </p>
+      <br />
+      <div id="default" class="js-accordion-group">
+        <section class="accordion js-accordion">
+          <h3 class="accordion__header">
+            <button class="accordion__button js-accordion-button" type="button">
+              Accordion Item
+              <span class="accordion__button__toggle"></span>
+            </button>
+          </h3>
+          <div class="accordion__body js-accordion-content">
+            <div class="accordion__body__inner">
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae, vel
+                repellendus iure error perferendis et animi aperiam iusto voluptate deleniti itaque
+                illum corporis quaerat dolor obcaecati. Consequuntur eius laboriosam ducimus.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="accordion js-accordion">
+          <h3 class="accordion__header">
+            <button class="accordion__button js-accordion-button" type="button">
+              Accordion Item
+              <span class="accordion__button__toggle"></span>
+            </button>
+          </h3>
+          <div class="accordion__body js-accordion-content">
+            <div class="accordion__body__inner">
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae, vel
+                repellendus iure error perferendis et animi aperiam iusto voluptate deleniti itaque
+                illum corporis quaerat dolor obcaecati. Consequuntur eius laboriosam ducimus.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="accordion js-accordion">
+          <h3 class="accordion__header">
+            <button class="accordion__button js-accordion-button" type="button">
+              Accordion Item
+              <span class="accordion__button__toggle"></span>
+            </button>
+          </h3>
+          <div class="accordion__body js-accordion-content">
+            <div class="accordion__body__inner">
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae, vel
+                repellendus iure error perferendis et animi aperiam iusto voluptate deleniti itaque
+                illum corporis quaerat dolor obcaecati. Consequuntur eius laboriosam ducimus.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+      <br />
+      <br />
+      <br />
+      <h2 style="font-size: 24px; font-weight: bold">シングルオープンモード</h2>
+      <p>
+        <code style="font-weight: bold">
+          .js-accordion-group[data-accordion-single-open="true"]
+        </code>
+      </p>
+      <p>一度に1つの項目しか開かなくなります。</p>
+      <br />
+      <div class="js-accordion-group" data-accordion-single-open="true">
+        <section class="accordion js-accordion">
+          <h3 class="accordion__header">
+            <button class="accordion__button js-accordion-button" type="button">
+              Accordion Item
+              <span class="accordion__button__toggle"></span>
+            </button>
+          </h3>
+          <div class="accordion__body js-accordion-content">
+            <div class="accordion__body__inner">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, adipisci. Sunt
+                odit aut deserunt error iste recusandae expedita. Vero iste ad recusandae debitis
+                aperiam possimus, vitae necessitatibus esse veniam? Dicta?
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="accordion js-accordion">
+          <h3 class="accordion__header">
+            <button class="accordion__button js-accordion-button" type="button">
+              Accordion Item
+              <span class="accordion__button__toggle"></span>
+            </button>
+          </h3>
+          <div class="accordion__body js-accordion-content">
+            <div class="accordion__body__inner">
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae, vel
+                repellendus iure error perferendis et animi aperiam iusto voluptate deleniti itaque
+                illum corporis quaerat dolor obcaecati. Consequuntur eius laboriosam ducimus.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="accordion js-accordion">
+          <h3 class="accordion__header">
+            <button class="accordion__button js-accordion-button" type="button">
+              Accordion Item
+              <span class="accordion__button__toggle"></span>
+            </button>
+          </h3>
+          <div class="accordion__body js-accordion-content">
+            <div class="accordion__body__inner">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, adipisci. Sunt
+                odit aut deserunt error iste recusandae expedita. Vero iste ad recusandae debitis
+                aperiam possimus, vitae necessitatibus esse veniam? Dicta?
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+      <br />
+      <br />
+      <br />
+      <h2 style="font-size: 24px; font-weight: bold">初期状態で最初の項目を開く</h2>
+      <p>
+        <code style="font-weight: bold">
+          .js-accordion-group[data-accordion-initial-open-first="true"]
+        </code>
+      </p>
+      <p>初期状態で最初の項目が開きます。</p>
+      <br />
+      <div class="js-accordion-group" data-accordion-initial-open-first="true">
+        <section class="accordion js-accordion">
+          <h3 class="accordion__header">
+            <button class="accordion__button js-accordion-button" type="button">
+              Accordion Item
+              <span class="accordion__button__toggle"></span>
+            </button>
+          </h3>
+          <div class="accordion__body js-accordion-content">
+            <div class="accordion__body__inner">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, adipisci. Sunt
+                odit aut deserunt error iste recusandae expedita. Vero iste ad recusandae debitis
+                aperiam possimus, vitae necessitatibus esse veniam? Dicta?
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="accordion js-accordion">
+          <h3 class="accordion__header">
+            <button class="accordion__button js-accordion-button" type="button">
+              Accordion Item
+              <span class="accordion__button__toggle"></span>
+            </button>
+          </h3>
+          <div class="accordion__body js-accordion-content">
+            <div class="accordion__body__inner">
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae, vel
+                repellendus iure error perferendis et animi aperiam iusto voluptate deleniti itaque
+                illum corporis quaerat dolor obcaecati. Consequuntur eius laboriosam ducimus.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="accordion js-accordion">
+          <h3 class="accordion__header">
+            <button class="accordion__button js-accordion-button" type="button">
+              Accordion Item
+              <span class="accordion__button__toggle"></span>
+            </button>
+          </h3>
+          <div class="accordion__body js-accordion-content">
+            <div class="accordion__body__inner">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, adipisci. Sunt
+                odit aut deserunt error iste recusandae expedita. Vero iste ad recusandae debitis
+                aperiam possimus, vitae necessitatibus esse veniam? Dicta?
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+      <br />
+      <br />
+      <br />
+      <h2 style="font-size: 24px; font-weight: bold">初期状態で特定の項目を開く</h2>
+      <p><code style="font-weight: bold">.js-accordion[class="is-active"]</code></p>
+      <p>任意の項目に上記を付与することでその項目が初期状態で開きます。</p>
+      <p>
+        この設定は
+        <code style="font-weight: bold">
+          .js-accordion-group[data-accordion-initial-open-first="true"]
+        </code>
+        よりも優先されます。
+      </p>
+      <br />
+      <div class="js-accordion-group">
+        <section class="accordion js-accordion">
+          <h3 class="accordion__header">
+            <button class="accordion__button js-accordion-button" type="button">
+              Accordion Item
+              <span class="accordion__button__toggle"></span>
+            </button>
+          </h3>
+          <div class="accordion__body js-accordion-content">
+            <div class="accordion__body__inner">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, adipisci. Sunt
+                odit aut deserunt error iste recusandae expedita. Vero iste ad recusandae debitis
+                aperiam possimus, vitae necessitatibus esse veniam? Dicta?
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="accordion js-accordion is-active">
+          <h3 class="accordion__header">
+            <button class="accordion__button js-accordion-button" type="button">
+              Accordion Item
+              <span class="accordion__button__toggle"></span>
+            </button>
+          </h3>
+          <div class="accordion__body js-accordion-content">
+            <div class="accordion__body__inner">
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae, vel
+                repellendus iure error perferendis et animi aperiam iusto voluptate deleniti itaque
+                illum corporis quaerat dolor obcaecati. Consequuntur eius laboriosam ducimus.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="accordion js-accordion">
+          <h3 class="accordion__header">
+            <button class="accordion__button js-accordion-button" type="button">
+              Accordion Item
+              <span class="accordion__button__toggle"></span>
+            </button>
+          </h3>
+          <div class="accordion__body js-accordion-content">
+            <div class="accordion__body__inner">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, adipisci. Sunt
+                odit aut deserunt error iste recusandae expedita. Vero iste ad recusandae debitis
+                aperiam possimus, vitae necessitatibus esse veniam? Dicta?
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
-  </div>
-  <div class="accordion js-accordion">
-    <h3 class="accordion__header">
-      <button class="accordion__button js-accordion-toggle">Accordion Item</button>
-    </h3>
-    <div class="accordion__body js-accordion-content">
-      <div class="accordion__body__inner">
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati perspiciatis debitis placeat blanditiis quibusdam dignissimos odit sit assumenda. Ex obcaecati vitae doloremque fugiat ab nemo rerum impedit, quisquam inventore nisi?</p>
-      </div>
-    </div>
-  </div>
-
-  <script src="main.js"></script>
-</body>
+  </body>
 </html>
