@@ -37,6 +37,7 @@ const setupAccordionGroup = (groupEl) => {
   const isInitialOpenFirstMode = groupEl.dataset.accordionInitialOpenFirst === "true";
 
   accordionItemEls.forEach((accordionItem, index) => {
+    const headerEl = accordionItem.querySelector(".js-accordion-header");
     const buttonEl = accordionItem.querySelector(".js-accordion-button");
     const contentEl = accordionItem.querySelector(".js-accordion-content");
 
@@ -56,8 +57,8 @@ const setupAccordionGroup = (groupEl) => {
       : `-group${Array.from(document.querySelectorAll(".js-accordion-group")).indexOf(groupEl)}`;
 
     // IDを設定
-    if (!buttonEl.id) {
-      buttonEl.id = `accordion-toggle${groupSuffix}-item${index}`;
+    if (!headerEl.id) {
+      headerEl.id = `accordion-header${groupSuffix}-item${index}`;
     }
     if (!contentEl.id) {
       contentEl.id = `accordion-content${groupSuffix}-item${index}`;
@@ -65,7 +66,7 @@ const setupAccordionGroup = (groupEl) => {
 
     // ARIA属性を設定
     buttonEl.setAttribute("aria-controls", contentEl.id);
-    contentEl.setAttribute("aria-labelledby", buttonEl.id);
+    contentEl.setAttribute("aria-labelledby", headerEl.id);
     contentEl.setAttribute("role", "region");
 
     // --- 初期状態の制御 ---
@@ -82,9 +83,8 @@ const setupAccordionGroup = (groupEl) => {
     buttonEl.addEventListener("click", () => {
       const isCurrentlyActive = accordionItem.classList.contains(ACTIVE_CLASS);
 
-      // シングルオープンモードで、かつクリックした項目が現在閉じている場合
+      // シングルオープンモードで、かつクリックした項目が現在閉じている場合、他の開いているアコーディオン項目をすべて閉じる
       if (isSingleOpenMode && !isCurrentlyActive) {
-        // 他の開いているアコーディオン項目をすべて閉じる
         accordionItemEls.forEach((otherItem) => {
           const otherButtonEl = otherItem.querySelector(".js-accordion-button");
           const otherContentEl = otherItem.querySelector(".js-accordion-content");
@@ -128,7 +128,7 @@ window.addEventListener("DOMContentLoaded", () => {
     accordionGroupEls.forEach((groupEl, index) => {
       // グループ要素にIDがなければユニークなIDを自動付与 (ID生成の基準として使用)
       if (!groupEl.id) {
-        groupEl.id = `accordion-group-${index}`;
+        groupEl.id = `accordion-group${index}`;
       }
       setupAccordionGroup(groupEl);
     });
